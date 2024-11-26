@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Video Gallery</h1>
+    </header>
+
+    <section class="video-gallery">
+        <!-- Video 1 -->
+        <div class="video-item">
+            <div class="cover" onclick="playVideo('video1')">
+                <img src="images/movie1.jpg" alt="Movie 1">
+                <p>Video 1: Title</p>
+            </div>
+            <div class="player" id="video1">
+                <iframe src="https://www.youtube.com/embed/6fVE8kSM43I" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="video-item">
+            <div class="cover" onclick="playVideo('video2')">
+                <img src="images/movie2.jpg" alt="Movie 2">
+                <p>Video 2: Title</p>
+            </div>
+            <div class="player" id="video2">
+                <iframe src="https://www.youtube.com/embed/6fVE8kSM43I" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Made with ❤️ by Your Name</p>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>
