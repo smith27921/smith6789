@@ -1,45 +1,70 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Gallery</title>
+    <title>Mixed Video Gallery</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>ดูหนังไข่</h1>
+        <h1>Mixed Video Gallery</h1>
     </header>
 
-    <section class="video-gallery">
-        <!-- Video 1 -->
+    <main class="gallery">
+        <!-- วิดีโอจาก YouTube -->
         <div class="video-item">
-            <div class="cover" onclick="playVideo('video1')">
-                <img src="images/ดาวน์โหลด - 2024-06-29T095602.687.jpg" alt="Movie 1">
-                <p>Video 1: Title</p>
+            <div class="cover" onclick="playVideo('youtube1')">
+                <img src="images/youtube_cover.jpg" alt="YouTube Video">
+                <p>Video 1: YouTube Example</p>
             </div>
-            <div class="player" id="video1">
+            <div class="player" id="youtube1">
                 <iframe src="https://www.youtube.com/embed/6fVE8kSM43I" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
         </div>
 
-        <!-- Video 2 -->
+        <!-- วิดีโอจาก Google Drive -->
         <div class="video-item">
-            <div class="cover" onclick="playVideo('video2')">
-                <img src="images/Top 10 _Impregnable_ Mike Tyson Memes.jpg" alt="Movie 2">
-                <p>Video 2: Title</p>
+            <div class="cover" onclick="playVideo('gdrive1')">
+                <img src="images/gdrive_cover.jpg" alt="Google Drive Video">
+                <p>Video 2: Google Drive Example</p>
             </div>
-            <div class="player" id="video2">
-                <iframe src="https://www.youtube.com/embed/6fVE8kSM43I" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="player" id="gdrive1">
+                <iframe src="https://drive.google.com/file/d/1daD6gOoE6a9_pyNLtb6-R1ukzsuQXXQJ/preview" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
         </div>
-    </section>
+
+        <!-- วิดีโอจากไฟล์ในโฟลเดอร์ videos/ -->
+        <div class="video-item">
+            <div class="cover" onclick="playVideo('local1')">
+                <img src="images/local_cover.jpg" alt="Local Video">
+                <p>Video 3: Local File Example</p>
+            </div>
+            <div class="player" id="local1">
+                <video controls>
+                    <source src="videos/sample.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </main>
 
     <footer>
-        <p>ทรงพระเจริญ</p>
+        <p>Made with ❤️ by Your Name</p>
     </footer>
 
-    <script src="scripts/script.js"></script>
+    <script>
+        function playVideo(videoId) {
+            const players = document.querySelectorAll('.player');
+            players.forEach(player => {
+                player.style.display = 'none'; // ซ่อน player ทั้งหมด
+            });
+
+            const selectedPlayer = document.getElementById(videoId);
+            if (selectedPlayer) {
+                selectedPlayer.style.display = 'block'; // แสดง player ที่เลือก
+            }
+        }
+    </script>
 </body>
 </html>
